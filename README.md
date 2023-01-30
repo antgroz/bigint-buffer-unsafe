@@ -175,3 +175,24 @@ preservation of a BigInt sign, truncation of bytes not fitting into
 
 [examples]: ./examples/
 [node-gyp]: https://github.com/nodejs/node-gyp
+
+## Tests
+
+To run tests, download the code from the repository and run.
+
+```sh
+$ npm install
+$ npm test
+```
+
+## Benchmarks
+
+The benchmarking tests measure the time required to run a function a million
+times on small (one byte) and large (million bytes) BigInt values and their
+equivalent Buffer representations. To run benchmarks, download the code
+from the repository and run.
+
+```sh
+$ npm install
+$ npm run bench
+```
