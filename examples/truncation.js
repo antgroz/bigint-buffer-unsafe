@@ -1,4 +1,4 @@
-const { writeBigIntToBuffer, readBigIntFromBuffer } = require('../bbu')
+const { readBigIntFromBuffer } = require('../bbu')
 
 function readBigIntFromBufferTruncated (buffer) {
   return readBigIntFromBuffer(buffer)
