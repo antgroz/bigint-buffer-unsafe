@@ -18,7 +18,7 @@ export function sizeOfBigIntAsBuffer(bigint: bigint): number;
  * the architecture and is not guaranteed to be stable across platforms.
  * If the Buffer does not have enough length to represent the BigInt in full,
  * the words are truncated at the last one that fits into the Buffer. Returns
- * the number of the number of bytes that was written into the Buffer.
+ * the number of bytes that was written into the Buffer.
  *
  * @param bigint BigInt value
  * @param buffer Buffer where the BigInt representation is written
