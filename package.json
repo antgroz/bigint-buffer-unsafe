@@ -10,6 +10,7 @@
   ],
   "author": "Anton Groznykh <antgroz@tutanota.com> (https://github.com/antgroz)",
   "license": "MIT",
+  "homepage": "https://github.com/antgroz/bigint-buffer-unsafe",
   "repository": {
     "type": "git",
     "url": "https://github.com/antgroz/bigint-buffer-unsafe.git"
@@ -23,6 +24,7 @@
     "bench": "node ./bench.js",
     "install": "node-gyp-build",
     "lint": "standard --fix",
+    "prebuild": "prebuildify --napi --strip",
     "rebuild": "node-gyp rebuild",
     "test": "tape ./test.js"
   },
@@ -32,6 +34,7 @@
   "devDependencies": {
     "nanobench": "^3.0.0",
     "node-gyp": "^9.3.1",
+    "prebuildify": "^5.0.1",
     "standard": "^17.0.0",
     "tape": "^5.6.3"
   }
