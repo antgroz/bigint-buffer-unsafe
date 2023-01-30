@@ -31,6 +31,9 @@ Prebuilt binaries are provided for the following targets.
 
 ## Usage
 
+The following example demonstrates how a BigInt can be converted from and into
+a Buffer.
+
 ```js
 const {
   sizeOfBigIntAsBuffer,
