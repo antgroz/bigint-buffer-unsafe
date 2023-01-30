@@ -50,15 +50,23 @@ write_bigint_to_buffer (napi_env env, napi_callback_info info)
 
   BBU_BUFFER_ARG (1);
 
-  if (!word_count)
-    return NULL;
+  if (word_count)
+    {
+      size_t word_count_required = word_count;
+      int sign;
+      BBU_CALL (napi_get_value_bigint_words (env, argv[0], &sign,
+                                             &word_count_required, words),
+                "failed to get bigint words");
 
-  int sign;
-  BBU_CALL (
-      napi_get_value_bigint_words (env, argv[0], &sign, &word_count, words),
-      "failed to get bigint words");
+      word_count = word_count < word_count_required ? word_count
+                                                    : word_count_required;
+    }
 
-  return NULL;
+  napi_value res;
+  BBU_CALL (napi_create_int64 (env, word_count * sizeof (uint64_t), &res),
+            "failed to create number from int64");
+
+  return res;
 }
 
 napi_value

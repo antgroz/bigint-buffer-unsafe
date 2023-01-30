@@ -60,16 +60,16 @@ for (const f of fixtures) {
   })
 
   test(`writeBigIntToBuffer(${f.val.norm}n)`, function (t) {
-    t.plan(1)
+    t.plan(2)
     const buffer = Buffer.alloc(f.sz)
-    writeBigIntToBuffer(f.val.norm, buffer)
+    t.equal(writeBigIntToBuffer(f.val.norm, buffer), f.sz)
     t.deepEquals(buffer, f.buf.norm)
   })
 
   test(`writeBigIntToBuffer(${f.val.denorm}n)`, function (t) {
-    t.plan(1)
+    t.plan(2)
     const buffer = Buffer.alloc(f.sz)
-    writeBigIntToBuffer(f.val.denorm, buffer)
+    t.equal(writeBigIntToBuffer(f.val.denorm, buffer), f.sz)
     t.deepEquals(buffer, f.buf.norm)
   })
 

@@ -4,10 +4,10 @@
  * Returns the exact length of a buffer that can be used to represent the
  * absolute value of the BigInt precisely and unambiguously.
  *
- * @param value BigInt value
+ * @param bigint BigInt value
  * @returns BigInt size in bytes
  */
-export function sizeOfBigIntAsBuffer(value: bigint): number;
+export function sizeOfBigIntAsBuffer(bigint: bigint): number;
 
 /**
  * Write the absolute value of a BigInt into its Buffer representation.
@@ -19,10 +19,11 @@ export function sizeOfBigIntAsBuffer(value: bigint): number;
  * to represent the BigInt precisely, its value is truncated to the
  * available length.
  *
- * @param value BigInt value
+ * @param bigint BigInt value
  * @param buffer Buffer where the BigInt representation is written
+ * @returns Number of bytes written
  */
-export function writeBigIntToBuffer(value: bigint, buffer: Buffer): void;
+export function writeBigIntToBuffer(bigint: bigint, buffer: Buffer): number;
 
 /**
  * Read the absolute value of a BigInt from its Buffer representation.
