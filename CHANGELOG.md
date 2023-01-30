@@ -12,5 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Function `sizeOfBigIntAsBuffer` for getting the size of a bigint
 - Function `writeBigIntToBuffer` for converting a bigint into a buffer
 - Function `readBigIntFromBuffer` for converting a buffer into a bigint
+- Tests and benchmarks
+- Examples of use
 
 [1.0.0]: https://github.com/antgroz/bigint-buffer-unsafe/releases/tag/v1.0.0
