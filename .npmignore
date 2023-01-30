@@ -1,0 +1,11 @@
+.clang-format
+.gitignore
+.npmignore
+.nvmrc
+.vscode
+bench.js
+build
+node_modules
+package-lock.json
+prebuild.js
+test.js
