@@ -188,7 +188,7 @@ $ npm test
 ## Benchmarks
 
 The benchmarking tests measure the time required to run a function a million
-times on small (one byte) and large (million bytes) BigInt values and their
+times on small (8B) and large (8KiB) BigInt values and their
 equivalent Buffer representations. To run benchmarks, download the code
 from the repository and run.
 
