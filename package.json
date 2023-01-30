@@ -1,7 +1,7 @@
 {
   "name": "bigint-buffer-unsafe",
   "version": "1.0.0",
-  "description": "Fast native converters between BigInt and Buffer for Node.js",
+  "description": "Fast native utilities for conversion between BigInt and Buffer for Node.js",
   "keywords": [
     "bigint",
     "buffer",
