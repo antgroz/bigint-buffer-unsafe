@@ -5,6 +5,7 @@
 .vscode
 bench.js
 build
+examples
 node_modules
 package-lock.json
 prebuild.js
