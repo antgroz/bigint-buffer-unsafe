@@ -168,9 +168,10 @@ The functions in the package can be extended in a variety of ways to achieve
 specialized, generic, safe, unsafe, and other types of high-level interfaces
 for conversion between BigInt and Buffer. To see examples of high-level
 functions that can be constructed from this package, see the
-[examples](./examples) directory. Currently, it contains functions that account
-for automatic memory allocation, treatment of endianness, order of 8-byte words,
+[examples] directory. Currently, it contains functions that account for
+automatic memory allocation, treatment of endianness, order of 8-byte words,
 preservation of a BigInt sign, truncation of bytes not fitting into
 8-byte words, and argument validation.
 
+[examples]: ./examples/
 [node-gyp]: https://github.com/nodejs/node-gyp
