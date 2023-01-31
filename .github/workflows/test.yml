@@ -10,8 +10,20 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        node-version: [14, 16, 18]
-        architecture: [x86, x64, arm64, armv6l, armv7l, ppc64le, s390x]
+        architecture: [x64]
+        include:
+          - os: macos-latest
+            architecture: arm64
+          - os: ubuntu-latest
+            architecture: arm64
+          - os: ubuntu-latest
+            architecture: armv7l
+          - os: ubuntu-latest
+            architecture: ppc64le
+          - os: ubuntu-latest
+            architecture: s390x
+          - os: windows-latest
+            architecture: x86
 
     steps:
       - name: Checkout
@@ -25,7 +37,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version-file: '.nvmrc'
           architecture: ${{ matrix.architecture }}
           cache: pnpm
 
