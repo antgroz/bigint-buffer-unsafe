@@ -18,6 +18,12 @@
   "bugs": {
     "url": "https://github.com/antgroz/bigint-buffer-unsafe/issues"
   },
+  "files": [
+    "bbu.c",
+    "bbu.d.ts",
+    "bbu.js",
+    "binding.gyp"
+  ],
   "main": "bbu.js",
   "types": "bbu.d.ts",
   "scripts": {
