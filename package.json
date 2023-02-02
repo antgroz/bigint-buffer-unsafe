@@ -32,17 +32,15 @@
     "lint": "standard --fix",
     "prebuild": "prebuildify --napi --strip",
     "rebuild": "node-gyp rebuild",
-    "test": "tape ./test.js"
+    "test": "node ./test.js"
   },
   "dependencies": {
     "node-gyp-build": "^4.6.0"
   },
   "devDependencies": {
-    "@types/node": "^18.11.18",
     "nanobench": "^3.0.0",
     "node-gyp": "^9.3.1",
     "prebuildify": "^5.0.1",
-    "standard": "^17.0.0",
-    "tape": "^5.6.3"
+    "standard": "^17.0.0"
   }
 }

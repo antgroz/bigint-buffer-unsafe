@@ -1,4 +1,5 @@
-const test = require('tape')
+const test = require('node:test')
+const assert = require('node:assert')
 const { sizeOfBigIntAsBuffer, writeBigIntToBuffer, readBigIntFromBuffer } = require('./bbu')
 
 const fixtures = [
@@ -49,37 +50,31 @@ const fixtures = [
 ]
 
 for (const f of fixtures) {
-  test(`sizeOfBigIntAsBuffer(${f.val.norm}n)`, function (t) {
-    t.plan(1)
-    t.equal(sizeOfBigIntAsBuffer(f.val.norm), f.sz)
+  test(`sizeOfBigIntAsBuffer(${f.val.norm}n)`, () => {
+    assert.strictEqual(sizeOfBigIntAsBuffer(f.val.norm), f.sz)
   })
 
-  test(`sizeOfBigIntAsBuffer(${f.val.denorm}n)`, function (t) {
-    t.plan(1)
-    t.equal(sizeOfBigIntAsBuffer(f.val.denorm), f.sz)
+  test(`sizeOfBigIntAsBuffer(${f.val.denorm}n)`, () => {
+    assert.strictEqual(sizeOfBigIntAsBuffer(f.val.denorm), f.sz)
   })
 
-  test(`writeBigIntToBuffer(${f.val.norm}n)`, function (t) {
-    t.plan(2)
+  test(`writeBigIntToBuffer(${f.val.norm}n)`, () => {
     const buffer = Buffer.alloc(f.sz)
-    t.equal(writeBigIntToBuffer(f.val.norm, buffer), f.sz)
-    t.deepEquals(buffer, f.buf.norm)
+    assert.strictEqual(writeBigIntToBuffer(f.val.norm, buffer), f.sz)
+    assert.deepEqual(buffer, f.buf.norm)
   })
 
-  test(`writeBigIntToBuffer(${f.val.denorm}n)`, function (t) {
-    t.plan(2)
+  test(`writeBigIntToBuffer(${f.val.denorm}n)`, () => {
     const buffer = Buffer.alloc(f.sz)
-    t.equal(writeBigIntToBuffer(f.val.denorm, buffer), f.sz)
-    t.deepEquals(buffer, f.buf.norm)
+    assert.strictEqual(writeBigIntToBuffer(f.val.denorm, buffer), f.sz)
+    assert.deepEqual(buffer, f.buf.norm)
   })
 
-  test(`readBigIntFromBuffer('0x${f.buf.norm.toString('hex')}')`, function (t) {
-    t.plan(1)
-    t.deepEquals(readBigIntFromBuffer(f.buf.norm), f.val.norm)
+  test(`readBigIntFromBuffer('0x${f.buf.norm.toString('hex')}')`, () => {
+    assert.deepEqual(readBigIntFromBuffer(f.buf.norm), f.val.norm)
   })
 
-  test(`readBigIntFromBuffer('0x${f.buf.denorm.toString('hex')}')`, function (t) {
-    t.plan(1)
-    t.deepEquals(readBigIntFromBuffer(f.buf.denorm), f.val.norm)
+  test(`readBigIntFromBuffer('0x${f.buf.denorm.toString('hex')}')`, () => {
+    assert.deepEqual(readBigIntFromBuffer(f.buf.denorm), f.val.norm)
   })
 }
