@@ -15,19 +15,12 @@ interfaces.
 
 ## Install
 
-For widely used targets, the prebuilt binaries are already included into the
-package and are resolved automatically upon installation. If a prebuilt
-binary is not found, a suitable set of compilation tools should be installed
-prior to installing the package (see [node-gyp] for details).
+If your system is not set up for compiling native addons, see [node-gyp]
+for instructions.
 
-Prebuilt binaries are provided for the following targets.
-
-- Linux arm64
-- Linux x64
-- MacOS arm64
-- MacOS x64
-- Windows x64
-- Windows x86
+```sh
+npm i bigint-buffer-unsafe
+```
 
 ## Usage
 
@@ -52,7 +45,7 @@ const b = readBigIntFromBuffer(buffer) // 32477337846138029132305779423704425716
 
 ## API
 
-### `sizeOfBigIntAsBuffer(bigint: bigint): number`
+### sizeOfBigIntAsBuffer(bigint)
 
 Returns the number of bytes required to represent the absolute value of
 a BigInt as a sequence of 8-byte words.
@@ -73,7 +66,7 @@ sizeOfBigIntAsBuffer(29561251265076120956210562186581212562560213560215n) // 24
 sizeOfBigIntAsBuffer(-29561251265076120956210562186581212562560213560215n) // 24
 ```
 
-### `writeBigIntToBuffer(bigint: bigint, buffer: Buffer): number`
+### writeBigIntToBuffer(bigint, buffer)
 
 Writes the binary representation of the absolute value of a BigInt into the
 provided Buffer. The BigInt is written in a sequence of 8-byte words, starting
@@ -135,7 +128,7 @@ writeBigIntToBuffer(-29561251265076120956210562186581212562560213560215n, buffer
 console.log(buffer.toString('hex')) // 97ab471e5d3a06e5c2efddadfbe98356
 ```
 
-### `readBigIntFromBuffer(buffer: Buffer): bigint`
+### readBigIntFromBuffer(buffer)
 
 Reads the absolute value of a BigInt from the entire contents of the
 provided Buffer. The contents of the Buffer are interpreted as a sequence
@@ -184,8 +177,8 @@ preservation of a BigInt sign, truncation of bytes not fitting into
 To run tests, download the code from the repository and run.
 
 ```sh
-$ npm install
-$ npm test
+npm install
+npm test
 ```
 
 ## Benchmarks
@@ -196,8 +189,8 @@ equivalent Buffer representations. To run benchmarks, download the code
 from the repository and run.
 
 ```sh
-$ npm install
-$ npm run bench
+npm install
+npm run bench
 ```
 
 ## License
